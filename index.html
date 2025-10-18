@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Configurações PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-title" content="Meu Site">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Mantém a barra verde -->
   <meta name="theme-color" content="#297B42">
-  <title>Teste de Barra Verde</title>
+  <meta name="theme-color" content="#297B42" media="(prefers-color-scheme: dark)">
+
+  <link rel="manifest" href="manifest.json">
+
+  <title>Meu Site</title>
+
+  <style>
+    :root {
+      --verde-topo: #297B42;
+      --branco-base: #ffffff;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(var(--verde-topo) 0%, var(--branco-base) 15%, var(--branco-base) 100%);
+      background-attachment: fixed;
+      color-scheme: light;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+      margin-top: 0;
+    }
+
+    /* Camada verde sob a status bar (mantém o efeito translúcido da Apple) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: env(safe-area-inset-top);
+      background: var(--verde-topo);
+      z-index: -1;
+    }
+
+    /* Corrige espaçamento no iOS */
+    @supports (-webkit-touch-callout: none) {
+      img { margin-bottom: -1px; }
+    }
+  </style>
 </head>
-<body style="background:#fff; margin:0; height:200vh;">
-  <h1>Teste da Barra Verde</h1>
+<body>
+  <img src="D9778246-95AB-45C6-8A7E-6CFFF32021B4.jpeg" alt="Minha Foto">
 </body>
 </html>

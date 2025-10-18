@@ -2,72 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- Configurações PWA -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carteirinha</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Meu Site">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-  <!-- Mantém a barra verde -->
-  <meta name="theme-color" content="#297B42">
-  <meta name="theme-color" content="#297B42" media="(prefers-color-scheme: dark)">
-
-  <link rel="manifest" href="manifest.json">
-
-  <title>Meu Site</title>
-
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#f2f6ff">
   <style>
-    :root {
-      --verde-topo: #297B42;
-      --branco-base: #f2f6ff;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: linear-gradient(var(--verde-topo) 0%, var(--branco-base) 15%, var(--branco-base) 100%);
-      background-attachment: fixed;
-      color-scheme: light;
+      background-color: #f2f6ff;
     }
 
     body {
       display: flex;
+      justify-content: center;
+      align-items: flex-start;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      min-height: 100vh;
+      background-color: #f2f6ff;
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       display: block;
-      border: 0;
-      outline: 0;
-      box-shadow: none;
-      margin-top: 0;
-    }
-
-    /* Camada verde sob a status bar (mantém o efeito translúcido da Apple) */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: env(safe-area-inset-top);
-      background: var(--verde-topo);
-      z-index: -1;
-    }
-
-    /* Corrige espaçamento no iOS */
-    @supports (-webkit-touch-callout: none) {
-      img { margin-bottom: -1px; }
     }
   </style>
 </head>
 <body>
-  <img src="a1ff663a-81e8-4042-90af-a56c5e891ad8.jpeg" alt="Minha Foto">
+  <img src="a1ff663a-81e8-4042-90af-a56c5e891ad8.jpeg" alt="Carteirinha" />
 </body>
 </html>
